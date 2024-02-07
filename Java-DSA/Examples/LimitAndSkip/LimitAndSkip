@@ -1,0 +1,28 @@
+/*
+Limit: 
+The limit(n) method is an intermediate operation
+that returns a stream not longer than the requested size.
+As before, the n parameter can't be negative.
+
+Skip:
+Another intermediate operation that discards the first 
+n elements of a stream. The n parameter can't be negative and
+if it's higher than the size of the stream, skip()
+returns an empty stream.
+*/
+
+package package_name;
+import java.util.Arrays;
+import java.util.List;
+
+public class Example{
+    public static void main(String[] args){
+        List<Integer> list= Arrays.asList(4,5,6,8,13,35,36,77,78,99);
+        //create a stream of the list
+        //we just want to print list till 36
+        list.stream().limit(7).forEach(x->System.out.println(x));
+
+        //want to skip the list till 36
+        list.stream().skip(7).forEach(x->System.out.println(x));
+    }
+}
